@@ -1,0 +1,247 @@
+// ============================================================
+// _small.scss  – Mobile-first base styles (320px and up)
+// ============================================================
+
+// ── Base resets ──────────────────────────────────────────────
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+* {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+// ── Body ─────────────────────────────────────────────────────
+body {
+  font-family:      $bodyFont;
+  font-weight:      $normalWeight;
+  min-width:        320px;
+  background-color: $lightBg;
+  color:            $textColor;
+  line-height:      $leading;
+  margin:           0;
+}
+
+// ── Header ───────────────────────────────────────────────────
+#headerWrapper {
+  background-color: $cardBg;
+  border-bottom:    3px solid $accentColor;
+}
+
+header {
+  display:     flex;
+  align-items: center;
+  gap:         $gutter;
+  padding:     0.85rem $contentPad;
+  max-width:   $maxWidth;
+  margin:      0 auto;
+
+  // logo link — strip default link chrome
+  > a:first-child {
+    flex-shrink: 0;
+    line-height: 0;
+    display:     block;
+  }
+
+  .header-text {
+    flex:      1;
+    min-width: 0; // prevents flex overflow
+  }
+
+  span {
+    font-family:    $displayFont;
+    font-size:      1.3rem;
+    font-weight:    $boldWeight;
+    color:          $primaryColor;
+    display:        block;
+    line-height:    1.2;
+    letter-spacing: 0.01em;
+    white-space:    nowrap;
+    overflow:       hidden;
+    text-overflow:  ellipsis;
+  }
+
+  .phone {
+    font-family:     $bodyFont;
+    font-size:       0.78rem;
+    font-weight:     $normalWeight;
+    color:           $mutedText;
+    text-decoration: none;
+    display:         block;
+    margin-top:      0.15rem;
+    letter-spacing:  0.02em;
+
+    &:hover {
+      color:           $accentColor;
+      text-decoration: underline;
+    }
+  }
+}
+
+// ── Navigation – SMALL: vertical, left-aligned ───────────────
+#navWrapper {
+  background-color: $primaryColor;
+}
+
+nav {
+  max-width: $maxWidth;
+  margin:    0 auto;
+
+  ul {
+    list-style: none;
+    margin:     0;
+    padding:    0.35rem 0;
+  }
+
+  ul li {
+    display: block;
+  }
+
+  ul li a {
+    font-family:     $bodyFont;
+    font-size:       0.8rem;
+    font-weight:     $boldWeight;
+    letter-spacing:  0.1em;
+    text-transform:  uppercase;
+    color:           rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    display:         block;
+    padding:         0.7rem $contentPad;
+    transition:      color 0.2s ease;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  // active: background + border-radius (per requirement)
+  ul li.active a {
+    background-color: rgba(255, 255, 255, 0.14);
+    color:            $accentColor;
+    border-radius:    6px;
+    margin:           0.15rem 0.75rem;
+    // keep visual left-alignment with nav items above/below
+    padding-left:     calc(#{$contentPad} - 0.25rem);
+  }
+}
+
+// ── Main ─────────────────────────────────────────────────────
+#mainWrapper {
+  background-color: $lightBg;
+}
+
+main {
+  max-width: $maxWidth;
+  margin:    0 auto;
+  padding:   2rem $contentPad 3.5rem;
+
+  h1 {
+    font-family:    $displayFont;
+    font-size:      2rem;
+    font-weight:    $boldWeight;
+    color:          $primaryColor;
+    margin:         0 0 1.75rem 0;
+    line-height:    1.15;
+    padding-bottom: 0.5rem;
+    border-bottom:  2px solid $accentColor;
+    display:        inline-block;
+  }
+}
+
+// ── Show Cards – SMALL: 1 column ─────────────────────────────
+.parent1 {
+  display:        flex;
+  flex-direction: column;
+  flex-wrap:      nowrap;
+  gap:            $gutter;
+}
+
+.card {
+  flex:             0 0 100%;
+  background-color: $cardBg;
+  border-radius:    $cardRadius;
+  overflow:         hidden;
+  box-shadow:       0 2px 8px rgba(0, 0, 0, 0.07),
+                    0 0 0 1px $borderColor;
+  transition:       transform 0.25s ease,
+                    box-shadow 0.25s ease;
+
+  &:hover {
+    transform:  translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12),
+                0 0 0 1px $borderColor;
+  }
+
+  img {
+    width:        100%;
+    height:       auto;
+    display:      block;
+    aspect-ratio: 1 / 1;
+    object-fit:   cover;
+  }
+
+  .card-content {
+    padding:    1rem 1.25rem 1.3rem;
+    border-top: 3px solid $accentColor;
+  }
+
+  h2 {
+    font-family: $displayFont;
+    font-size:   1.1rem;
+    font-weight: $boldWeight;
+    color:       $primaryColor;
+    margin:      0 0 0.4rem 0;
+    line-height: 1.3;
+  }
+
+  .date {
+    font-family:    $bodyFont;
+    font-size:      0.75rem;
+    font-weight:    $boldWeight;
+    color:          $secondaryColor;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin:         0;
+    padding:        0;
+
+    time {
+      font-style: normal;
+    }
+  }
+}
+
+// ── Footer ───────────────────────────────────────────────────
+#footerWrapper {
+  background-color: $primaryColor;
+}
+
+footer {
+  max-width:   $maxWidth;
+  margin:      0 auto;
+  padding:     1.5rem $contentPad;
+  font-family: $bodyFont;
+  font-size:   0.82rem;
+  font-weight: $normalWeight;
+  color:       rgba(255, 255, 255, 0.75);
+  text-align:  center;
+  line-height: $leading;
+
+  p {
+    margin:  0;
+    padding: 0;
+    color:   rgba(255, 255, 255, 0.75);
+  }
+
+  a {
+    color:           rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+
+    &:hover {
+      color:           $accentColor;
+      text-decoration: underline;
+    }
+  }
+}

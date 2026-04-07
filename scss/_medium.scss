@@ -1,0 +1,51 @@
+// ============================================================
+// _medium.scss  – Tablet styles (35rem / 560px and up)
+// Imported inside @media in styles.scss — overrides only
+// ============================================================
+
+// ── Header ───────────────────────────────────────────────────
+header {
+  span {
+    font-size: 1.6rem;
+  }
+}
+
+// ── Navigation – MEDIUM: horizontal, left-aligned ────────────
+nav {
+  ul {
+    display:     flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding:     0 $contentPad;
+    gap:         0;
+  }
+
+  ul li {
+    display: inline-flex;
+  }
+
+  ul li a {
+    display:     flex;
+    align-items: center;
+    padding:     0.8rem 0.9rem;
+    font-size:   0.78rem;
+  }
+
+  // reset small-screen active indent; reapply inline background
+  ul li.active a {
+    margin:       0;
+    padding:      0.8rem 0.9rem;
+    border-radius: 6px;
+  }
+}
+
+// ── Show Cards – MEDIUM: 2 columns ───────────────────────────
+.parent1 {
+  flex-direction: row;
+  flex-wrap:      wrap;
+}
+
+.card {
+  // 2 cols: (100% - 1 gap) / 2
+  flex: 0 0 calc(50% - #{$gutter / 2});
+}

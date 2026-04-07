@@ -1,0 +1,30 @@
+// ============================================================
+// _variables.scss
+// Design tokens – Performing Arts Center
+// ============================================================
+
+// ── Colors ───────────────────────────────────────────────────
+$primaryColor:   #1d295f;  // Deep navy  – header, nav, footer
+$secondaryColor: #7c1d47;  // Burgundy   – date labels, accents
+$accentColor:    #c9a84c;  // Gold       – borders, hover, active
+$lightBg:        #f9f7f4;  // Warm white – page background
+$cardBg:         #ffffff;  // Pure white – cards
+$textColor:      #2a2a2a;  // Near-black – body copy
+$mutedText:      #5a5a5a;  // Mid-grey   – sub-text, phone
+$borderColor:    #e0dbd5;  // Warm grey  – card outlines
+$greyColor:      #cccccc;  // Legacy misc grey
+
+// ── Typography ───────────────────────────────────────────────
+$displayFont:  'Playfair Display', Georgia, serif;
+$bodyFont:     'Lato', Arial, sans-serif;
+$defaultFont:  $bodyFont;
+$lightWeight:  300;
+$normalWeight: 400;
+$boldWeight:   700;
+$leading:      1.65;
+
+// ── Spacing & Layout ─────────────────────────────────────────
+$gutter:     1.25rem;  // Flex gap between cards
+$contentPad: 1.5rem;   // Horizontal padding inside wrappers
+$maxWidth:   75rem;    // 1200px – max content width
+$cardRadius: 8px;

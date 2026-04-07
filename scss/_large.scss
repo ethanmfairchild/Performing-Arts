@@ -1,0 +1,38 @@
+// ============================================================
+// _large.scss  – Desktop styles (64rem / 1024px and up)
+// Imported inside @media in styles.scss — overrides only
+// ============================================================
+
+// ── Header ───────────────────────────────────────────────────
+header {
+  span {
+    font-size: 1.85rem;
+  }
+}
+
+// ── Navigation ───────────────────────────────────────────────
+nav {
+  ul li a {
+    padding:   0.9rem 1.1rem;
+    font-size: 0.82rem;
+  }
+
+  ul li.active a {
+    padding: 0.9rem 1.1rem;
+  }
+}
+
+// ── Show Cards – LARGE: 3 columns ────────────────────────────
+.card {
+  // 3 cols: (100% - 2 gaps) / 3
+  flex: 0 0 calc(33.333% - #{$gutter * 2 / 3});
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
+
+// ── Main h1 – slightly larger on desktop ─────────────────────
+main h1 {
+  font-size: 2.5rem;
+}
